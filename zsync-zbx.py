@@ -97,7 +97,7 @@ parser.add_argument("--send", action="store_true",
                     help="send data via zabbix_sender to zabbix trapper")
 args = parser.parse_args()
 
-jobs = zsync(statefile = "sync_state")
+jobs = zsync(statefile = "/var/lib/pve-zsync/sync_state")
 if args.discover:
     jobs.discover()
 elif args.send:
